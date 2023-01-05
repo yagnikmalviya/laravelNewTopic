@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Admin;
 
 use App\Exports\XlsxExport;
 use App\Http\Controllers\Controller;
 use App\Imports\XlsxImport;
 use App\Models\XlsxTable;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use DataTables;
 use Exception;
-use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 class ExaleGenerateController extends Controller
 {
@@ -20,7 +21,7 @@ class ExaleGenerateController extends Controller
                     ->addIndexColumn()
                     ->make(true);
         }
-        return view('xlsx.table');
+        return view('Admin.xlsx.table');
     }
 
     public function xlsxInsert(Request $request){
@@ -56,5 +57,16 @@ class ExaleGenerateController extends Controller
             Excel::import(new XlsxImport,$request->file);
         }
         return back();
+    }
+
+    public function pdfExport(Request $request){
+        $data = [
+            'title' => 'Welcome to ItSolutionStuff.com',
+            'date' => date('m/d/Y')
+        ];
+
+        $pdf = PDF::loadView('Admin.xlsx.pdf', $data);
+
+        return $pdf->download('itsolutionstuff.pdf');
     }
 }

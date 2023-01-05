@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 
 class GeneralController extends Controller
@@ -37,30 +39,23 @@ class GeneralController extends Controller
     public function handleFacebookCallback()
     {
         try {
-
             $user = Socialite::driver('facebook')->user();
-
+            dd($user);
             $finduser = User::where('facebook_id', $user->id)->first();
 
             if($finduser){
-
-                Auth::login($finduser);
-
-                return redirect()->intended('dashboard');
-
+                // Auth::login($finduser);
+                return redirect('/');
             }else{
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'facebook_id'=> $user->id,
-                    'password' => encrypt('123456dummy')
+                    'google_id'=> $user->id,
+                    'password' => Hash::make(12345678)
                 ]);
-
-                Auth::login($newUser);
-
-                return redirect()->intended('dashboard');
+                // Auth::login($newUser);
+                return redirect('/');
             }
-
         } catch (Exception $e) {
             dd($e->getMessage());
         }
@@ -73,32 +68,24 @@ class GeneralController extends Controller
 
     public function handleGoogleCallback()
     {
-        dd('hiui');
         try {
-
             $user = Socialite::driver('google')->user();
 
             $finduser = User::where('google_id', $user->id)->first();
 
             if($finduser){
-
-                Auth::login($finduser);
-
-                return redirect()->intended('dashboard');
-
+                // Auth::login($finduser);
+                return redirect('/');
             }else{
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'password' => encrypt('123456dummy')
+                    'password' => Hash::make(12345678)
                 ]);
-
-                Auth::login($newUser);
-
-                return redirect()->intended('dashboard');
+                // Auth::login($newUser);
+                return redirect('/');
             }
-
         } catch (Exception $e) {
             dd($e->getMessage());
         }

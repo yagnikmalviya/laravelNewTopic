@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Front\ExaleGenerateController;
+use App\Http\Controllers\Admin\LayoutController;
+use App\Http\Controllers\Admin\ExaleGenerateController;
 use App\Http\Controllers\Front\GeneralController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,7 @@ Route::get('my-components', function () {
 Route::get('/xlsxView',[ExaleGenerateController::class,'XlsxeView'])->name('xlsxTable');
 Route::post('/xlsxImport',[ExaleGenerateController::class,'XlsxImport'])->name('xlsxImport');
 Route::get('/xlsxExport',[ExaleGenerateController::class,'XlsxExport'])->name('xlsxExport');
+Route::get('/pdfExport',[ExaleGenerateController::class,'pdfExport'])->name('pdfExport');
 
 // Create Custom Blade Directive
 Route::get('/directive',[GeneralController::class,'Directive']);
@@ -35,11 +37,11 @@ Route::get('/directive',[GeneralController::class,'Directive']);
 Route::get('/langguage',[GeneralController::class,'Langguage']);
 Route::get('/langguageChange',[GeneralController::class,'LangguageChange'])->name('langguageChange');
 
-
-
 Route::get('facebook', [GeneralController::class, 'redirectToFacebook']);
 Route::get('facebook/callback', [GeneralController::class, 'handleFacebookCallback']);
 
-
 Route::get('google', [GeneralController::class, 'redirectToGoogle']);
 Route::get('google/callback', [GeneralController::class, 'handleGoogleCallback']);
+
+
+Route::get('/dashboard', [LayoutController::class, 'dashboard'])->name('dashboard');

@@ -30,4 +30,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google' => [
+        'client_id' => '462473132426-i44cved3798gr5rb9dpdj90hm1ooms99.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://localhost/laravelNewTopic/google/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => '',
+        'client_secret' => '',
+        'redirect' => 'http://localhost/laravelNewTopic/facebook/callback',
+    ],
+
 ];
