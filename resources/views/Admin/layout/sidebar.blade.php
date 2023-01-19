@@ -40,6 +40,18 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('component') }}">
+            <i class="typcn typcn-document-text menu-icon"></i>
+            <span class="menu-title">Component</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('language') }}">
+            <i class="typcn typcn-document-text menu-icon"></i>
+            <span class="menu-title">Language</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <i class="typcn typcn-briefcase menu-icon"></i>
             <span class="menu-title">UI Elements</span>
@@ -53,11 +65,5 @@
             </ul>
             </div>
         </li>
-    </ul>
-    <ul class="sidebar-legend">
-        <li><p class="sidebar-menu-title">Category</p></li>
-        <li class="nav-item"><a href="#" class="nav-link">#Sales</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">#Marketing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">#Growth</a></li>
     </ul>
 </nav>

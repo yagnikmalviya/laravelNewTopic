@@ -2,16 +2,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hi</title>
+    <title>PDF</title>
+    <style>
+        table{
+            width: 100%
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ $title }}</h1>
-    <p>{{ $date }}</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h1 style="text-align: center;">Xlsx Table Data</h1>
+<table border>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile No.</th>
+            <th>City</th>
+            <th>District</th>
+            <th>taluka</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($datas as $data)
+            <tr>
+                <td>{{$data['id']}}</td>
+                <td>{{$data['name']}}</td>
+                <td>{{$data['email']}}</td>
+                <td>{{$data['mobile']}}</td>
+                <td>{{$data['city']}}</td>
+                <td>{{$data['district']}}</td>
+                <td>{{$data['taluka']}}</td>
+                <td>{{$data['address']}}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
 </body>
 </html>

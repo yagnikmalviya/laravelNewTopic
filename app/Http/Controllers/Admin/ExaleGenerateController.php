@@ -60,13 +60,23 @@ class ExaleGenerateController extends Controller
     }
 
     public function pdfExport(Request $request){
-        $data = [
-            'title' => 'Welcome to ItSolutionStuff.com',
-            'date' => date('m/d/Y')
-        ];
+        $getData = XlsxTable::get();
+        $dataArray['datas'] = [];
+        foreach ($getData as $dataKey => $dataValue) {
+            $dataArray['datas'][] = array(
+                'id' => $dataValue->id,
+                'name' => $dataValue->name,
+                'email' => $dataValue->email,
+                'mobile' => $dataValue->mobile,
+                'city' => $dataValue->city,
+                'district' => $dataValue->district,
+                'taluka' => $dataValue->taluka,
+                'address' => $dataValue->address,
+            );
+        }
 
-        $pdf = PDF::loadView('Admin.xlsx.pdf', $data);
+        $pdf = PDF::loadView('Admin.xlsx.pdf', $dataArray);
 
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download('Laravel-new-topic.pdf');
     }
 }

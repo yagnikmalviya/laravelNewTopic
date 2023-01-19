@@ -22,33 +22,6 @@
       @include('Admin.layout.header')
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_settings-panel.html -->
-        <div class="theme-setting-wrapper">
-          <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
-          <div id="theme-settings" class="settings-panel">
-            <i class="settings-close typcn typcn-delete-outline"></i>
-            <p class="settings-heading">SIDEBAR SKINS</p>
-            <div class="sidebar-bg-options" id="sidebar-light-theme">
-              <div class="img-ss rounded-circle bg-light border mr-3"></div>
-              Light
-            </div>
-            <div class="sidebar-bg-options selected" id="sidebar-dark-theme">
-              <div class="img-ss rounded-circle bg-dark border mr-3"></div>
-              Dark
-            </div>
-            <p class="settings-heading mt-2">HEADER SKINS</p>
-            <div class="color-tiles mx-0 px-4">
-              <div class="tiles success"></div>
-              <div class="tiles warning"></div>
-              <div class="tiles danger"></div>
-              <div class="tiles primary"></div>
-              <div class="tiles info"></div>
-              <div class="tiles dark"></div>
-              <div class="tiles default border"></div>
-            </div>
-          </div>
-        </div>
-        <!-- partial -->
         <!-- partial:partials/_sidebar.html -->
         @include('Admin.layout.sidebar')
         <!-- partial -->
@@ -84,6 +57,7 @@
     <script src="{{ asset('public/Admin/js/dashboard.js') }}"></script>
     <!-- End custom js for this page-->
 
+
     {{-- Yajra Datatable script --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
@@ -94,6 +68,7 @@
     {{-- Import Export Data script --}}
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
     @stack('js')
 

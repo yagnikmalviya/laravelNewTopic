@@ -21,11 +21,11 @@ class GeneralController extends Controller
         return view('General.directive', compact('body'));
     }
 
-    public function Langguage(){
+    public function Language(){
         return view('General.lang');
     }
 
-    public function LangguageChange(Request $request){
+    public function LanguageChange(Request $request){
         App::setLocale($request->lang);
         session()->put('locale', $request->lang);
         return redirect()->back();
@@ -89,5 +89,10 @@ class GeneralController extends Controller
         } catch (Exception $e) {
             dd($e->getMessage());
         }
+    }
+
+    public function Component()
+    {
+        return view('Admin.components.my_components');
     }
 }
