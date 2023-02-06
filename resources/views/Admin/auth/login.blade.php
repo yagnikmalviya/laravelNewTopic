@@ -29,14 +29,20 @@
               <div class="brand-logo">
                 <img src="{{ asset('public/Admin/images/logo.svg') }}" alt="logo">
               </div>
+              <div class="mainErr" style="display: none">
+                  <div class="d-flex border border-danger align-items-center mb-3 p-3 rounded-lg text-danger" style="height: 50px; background: #ff00004f;" ></div>
+              </div>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3" name="loginform" onsubmit="return false;" method="POST">
                 <div class="form-group">
-                  <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" />
+                  <div class="err_email mt-2 text-danger"></div>
                 </div>
+
                 <div class="form-group">
                   <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <div class="err_password mt-2 text-danger"></div>
                 </div>
                 <div class="mt-3">
                     <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" onclick="singIn()">SIGN IN</button>
@@ -87,7 +93,17 @@
                 complete: function() {},
                 success: function(data) {
                     if (data.status == 401) {
-                        alert('Invalid');
+                        if(typeof  data.error1 != 'object')
+                        {
+                            $('.mainErr').find('div').text(data.error1);
+                            $('.mainErr').css('display', 'block');
+                        }
+
+
+                        $.each(data.error1, function(index, value) {
+                            $($('.err_' + index).parent().children('input').addClass('border border-danger'));
+                            $('.err_' + index).text(value);
+                        });
                     }
                     if (data.status == 1) {
                         window.location.href = data.redirect;
