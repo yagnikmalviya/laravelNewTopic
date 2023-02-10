@@ -1,6 +1,6 @@
 @component('Admin.subContentComponent')
-    @slot('title') Xlsx Table @endslot
-    @slot('subTitle') Import Export Excel and CSV File Tutorial @endslot
+    @slot('title'){{ __('messages.excel') }} {{ __('messages.table') }}@endslot
+    @slot('subTitle') {{ __('messages.import').' '. __('messages.export').' '.__('messages.excel').' '. __('messages.and').' '.__('messages.csv').' '.__('messages.file').' '.__('messages.tutorial') }} @endslot
     {{-- Main Content --}}
     @slot('content')
         <div class="row col-12 justify-content-between align-items-end my-4 m-0">
@@ -8,27 +8,27 @@
                 @csrf
                 <div class="input-group">
                         <input type="file" name="file" class="custom-file-input" id="inputGroupFile04">
-                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                        <label class="custom-file-label" for="inputGroupFile04">{{__('messages.import').' '.__('messages.file')}}</label>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-success" >Import Xlsx</button>
+                        <button class="btn btn-outline-success" >{{__('messages.import').' '.__('messages.excel')}}</button>
                     </div>
-                    </div>
+                </div>
             </form>
-            <a href="{{ route('pdfExport') }}"><button class="btn btn-outline-danger">Export Pdf</button></a>
-            <a href="{{ route('xlsxExport') }}"><button class="btn btn-outline-warning">Export Xlsx</button></a>
+            <a href="{{ route('pdfExport') }}"><button class="btn btn-outline-danger">{{__('messages.export').' '.__('messages.pdf')}}</button></a>
+            <a href="{{ route('xlsxExport') }}"><button class="btn btn-outline-warning">{{__('messages.export').' '.__('messages.excel')}}</button></a>
         </div>
         <div class="col-12">
             <table class="table table-bordered data-table my-3">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Mobile No.</th>
-                        <th>City</th>
-                        <th>District</th>
-                        <th>taluka</th>
-                        <th>Address</th>
+                        <th>{{ __('messages.no') }}</th>
+                        <th>{{ __('messages.name') }}</th>
+                        <th>{{ __('messages.email') }}</th>
+                        <th>{{ __('messages.mobile_no') }}</th>
+                        <th>{{ __('messages.city') }}</th>
+                        <th>{{ __('messages.district') }}</th>
+                        <th>{{ __('messages.taluka') }}</th>
+                        <th>{{ __('messages.address') }}</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -1,62 +1,61 @@
 <?php
   $data = [
       [
-          'label' => 'Enter Your Name',
+          'label' => __('messages.enter_your').' '.__('messages.name'),
           'class' => '',
           'id' => '',
           'type' => 'text',
           'name' => 'name',
-          'placeholder' => 'Enter your name',
+          'placeholder' =>  __('messages.enter_your').' '.__('messages.name'),
       ],
       [
-          'label' => 'Enter Your Email',
+          'label' => __('messages.enter_your').' '.__('messages.email'),
           'class' => '',
           'id' => '',
           'type' => 'email',
           'name' => 'email',
-          'placeholder' => 'Enter your email',
+          'placeholder' => __('messages.enter_your').' '.__('messages.email'),
       ],
       [
-          'label' => 'Enter Your password',
+          'label' => __('messages.enter_your').' '.__('messages.password'),
           'class' => '',
           'id' => '',
           'type' => 'password',
           'name' => 'password',
-          'placeholder' => 'Enter your password',
+          'placeholder' => __('messages.enter_your').' '.__('messages.password'),
       ],
       [
-          'label' => 'Enter Your city',
+          'label' => __('messages.enter_your').' '.__('messages.city'),
           'class' => '',
           'id' => '',
           'type' => 'text',
           'name' => 'city',
-          'placeholder' => 'Enter your city',
+          'placeholder' => __('messages.enter_your').' '.__('messages.city'),
       ],
       [
-          'label' => 'Enter Your Taluko',
+          'label' => __('messages.enter_your').' '.__('messages.taluka'),
           'class' => '',
           'id' => '',
           'type' => 'text',
           'name' => 'taluko',
-          'placeholder' => 'Enter your Taluko',
+          'placeholder' => __('messages.enter_your').' '.__('messages.taluka'),
       ],
       [
-          'label' => 'Enter Your District',
+          'label' => __('messages.enter_your').' '.__('messages.district'),
           'class' => '',
           'id' => '',
           'type' => 'text',
           'name' => 'district',
-          'placeholder' => 'Enter your district',
+          'placeholder' => __('messages.enter_your').' '.__('messages.district'),
       ],
   ]
 ?>
 
 @component('Admin.subContentComponent')
-    @slot('title') component @endslot
-    @slot('subTitle') dynamic Form Design @endslot
+    @slot('title') {{__('messages.component')}} @endslot
+    @slot('subTitle') {{__('messages.dynamic_form_design')}} @endslot
     {{-- Main Content --}}
     @slot('content')
-
         <div class="col-lg-12">
             <form action="#" method="POST" onsubmit="return false;" name="form" >
                 @foreach ($data as $dataKey => $dataValue)
@@ -69,15 +68,12 @@
                         @endforeach
                     @endcomponent
                 @endforeach
-                <button class="btn btn-success" type="submit" >Success</button>
+                <button class="btn btn-success" type="submit" >{{__('messages.success')}}</button>
             </form>
         </div>
-
     @endslot
     {{-- Script --}}
     @slot('script')
 
     @endslot
 @endcomponent
-
-

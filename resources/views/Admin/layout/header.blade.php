@@ -26,6 +26,13 @@
       </ul>
       <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item d-none d-lg-flex  mr-2">
+            <select class="form-control changeLang">
+                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                <option value="hindi" {{ session()->get('locale') == 'hindi' ? 'selected' : '' }}>Hindi</option>
+                <option value="guj" {{ session()->get('locale') == 'guj' ? 'selected' : '' }}>Gujrati</option>
+            </select>
+        </li>
+        <li class="nav-item d-none d-lg-flex  mr-2">
           <a class="nav-link" href="#">
             Help
           </a>

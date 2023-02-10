@@ -22,7 +22,7 @@ Route::group(['middleware' => 'Login'], function ()
     // Create Custom Blade Directive
     Route::get('/directive',[GeneralController::class,'Directive']);
 
-    //Component
+    // Component
     Route::get('components', [GeneralController::class, 'Component'])->name('component');
 
     // Change Language
@@ -32,7 +32,7 @@ Route::group(['middleware' => 'Login'], function ()
     Route::get('facebook', [GeneralController::class, 'redirectToFacebook']);
     Route::get('facebook/callback', [GeneralController::class, 'handleFacebookCallback']);
 
-    Route::get('google', [GeneralController::class, 'redirectToGoogle']);
+    Route::get('google', [GeneralController::class, 'redirectToGoogle'])->name('redirectToGoogle');
     Route::get('google/callback', [GeneralController::class, 'handleGoogleCallback']);
 
     Route::get('/', [LayoutController::class, 'dashboard'])->name('dashboard');

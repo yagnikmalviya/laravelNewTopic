@@ -39,7 +39,6 @@
                   <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" />
                   <div class="err_email mt-2 text-danger"></div>
                 </div>
-
                 <div class="form-group">
                   <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                   <div class="err_password mt-2 text-danger"></div>
@@ -98,7 +97,6 @@
                             $('.mainErr').find('div').text(data.error1);
                             $('.mainErr').css('display', 'block');
                         }
-
 
                         $.each(data.error1, function(index, value) {
                             $($('.err_' + index).parent().children('input').addClass('border border-danger'));

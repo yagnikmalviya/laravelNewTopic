@@ -7,12 +7,8 @@
                 <span class="sidebar-status-indicator"></span>
             </div>
             <div class="sidebar-profile-name">
-                <p class="sidebar-name">
-                Laravel New Topic
-                </p>
-                <p class="sidebar-designation">
-                New
-                </p>
+                <p class="sidebar-name">{{__('messages.laravel_new_topic')}}</p>
+                <p class="sidebar-designation">{{__('messages.new')}}</p>
             </div>
             </div>
             <div class="nav-search">
@@ -30,25 +26,25 @@
         <li class="nav-item">
             <a class="nav-link" href=" {{ route('dashboard') }} ">
             <i class="typcn typcn-device-desktop menu-icon"></i>
-            <span class="menu-title">Dashboard <span class="badge badge-primary ml-3">New</span></span>
+            <span class="menu-title">{{__('messages.dashboard')}}<span class="badge badge-primary ml-3">{{__('messages.new')}}</span></span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('xlsxTable') }}">
             <i class="typcn typcn-document-text menu-icon"></i>
-            <span class="menu-title">Xlsx Table</span>
+            <span class="menu-title">{{__('messages.excel').' '.__('messages.table')}}</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('component') }}">
             <i class="typcn typcn-document-text menu-icon"></i>
-            <span class="menu-title">Component</span>
+            <span class="menu-title">{{__('messages.component')}}</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('language') }}">
             <i class="typcn typcn-document-text menu-icon"></i>
-            <span class="menu-title">Language</span>
+            <span class="menu-title">{{__('messages.language')}}</span>
             </a>
         </li>
         <li class="nav-item">

@@ -1,7 +1,32 @@
 <?php
 
 return [
-
     'title' => 'This is English Language Title.',
-
+    'laravel_new_topic' => 'Laravel New Topic Topic',
+    'new' => 'New',
+    'no' => 'No',
+    'name' => 'Name',
+    'password' => 'Password',
+    'email' => 'Email',
+    'mobile_no' => 'Mobile No',
+    'city' => 'City',
+    'district' => 'District',
+    'taluka' => 'Taluka',
+    'address' => 'Address',
+    'import' => 'Import',
+    'export' => 'Export',
+    'csv' => 'CSV',
+    'excel' => 'Excel',
+    'success' => 'Success',
+    'pdf' => 'PDF',
+    'file' => 'File',
+    'table' => 'Table',
+    'and' => 'And',
+    'tutorial' => 'Tutorial',
+    'choose' => 'Choose',
+    'component' => 'Component',
+    'dynamic_form_design' => 'Dynamic Form Design',
+    'enter_your' => 'Enter your',
+    'dashboard' => 'Dashboard',
+    'language' => 'Language',
 ];

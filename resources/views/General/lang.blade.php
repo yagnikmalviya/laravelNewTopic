@@ -10,8 +10,8 @@
             <div class="col-4">
                 <select class="form-control changeLang">
                     <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                    <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>France</option>
-                    <option value="sp" {{ session()->get('locale') == 'sp' ? 'selected' : '' }}>Spanish</option>
+                    <option value="hindi" {{ session()->get('locale') == 'hindi' ? 'selected' : '' }}>Hindi</option>
+                    <option value="guj" {{ session()->get('locale') == 'guj' ? 'selected' : '' }}>Gujrati</option>
                 </select>
             </div>
         </div>
