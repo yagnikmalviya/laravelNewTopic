@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\LayoutController;
 use App\Http\Controllers\Admin\ExaleGenerateController;
+use App\Http\Controllers\Admin\GeneralController as AdminGeneralController;
 use App\Http\Controllers\Front\GeneralController;
 
 
@@ -36,4 +37,8 @@ Route::group(['middleware' => 'Login'], function ()
     Route::get('google/callback', [GeneralController::class, 'handleGoogleCallback']);
 
     Route::get('/', [LayoutController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('dependent_index', [AdminGeneralController::class, 'dependentIndex'])->name('dependentIndex');
+    Route::get('state/{id}', [AdminGeneralController::class, 'state'])->name('state');
+    Route::get('city/{id}', [AdminGeneralController::class, 'city'])->name('city');
 });

@@ -48,6 +48,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('dependentIndex') }}">
+            <i class="typcn typcn-document-text menu-icon"></i>
+            <span class="menu-title">{{__('messages.dependent')}}</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <i class="typcn typcn-briefcase menu-icon"></i>
             <span class="menu-title">UI Elements</span>

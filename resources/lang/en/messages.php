@@ -29,4 +29,8 @@ return [
     'enter_your' => 'Enter your',
     'dashboard' => 'Dashboard',
     'language' => 'Language',
+    'dependent' => 'Dependent',
+    'country' => 'Country',
+    'state' => 'State',
+    'select' => 'Select',
 ];

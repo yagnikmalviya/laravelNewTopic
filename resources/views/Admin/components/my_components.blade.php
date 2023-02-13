@@ -74,6 +74,5 @@
     @endslot
     {{-- Script --}}
     @slot('script')
-
     @endslot
 @endcomponent
