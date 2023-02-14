@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Api\AuthController;
 use App\Http\Controllers\interventionImageController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\View\ExaleGenerateController;
@@ -17,9 +18,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+
+// SANCTUM API
+// Route::middleware('auth:sanctum')->group( function () {
+//     Route::resource('/resourceRoute',ResourceController::class);
+// });
+
+// PASSPORT API
+Route::middleware('auth:api')->group( function () {
+    Route::resource('/resourceRoute',ResourceController::class);
 });
+
+Route::post('/login',[AuthController::class,'login']);
 
 Route::group(['namespace' => 'Auth', 'prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::post('/interventionImageInsert',[interventionImageController::class,'interventionImageAdd']);
@@ -32,7 +47,7 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth', 'as' => 'auth.'], funct
 Route::get('/removeImageQuerJob',[interventionImageController::class,'removeImageQuerJob']);
 
 // Resource Route
-Route::resource('/resourceRoute',ResourceController::class);
+// Route::resource('/resourceRoute',ResourceController::class);
 
 // Xlsx data insert
 Route::post('/xlsxInsert',[ExaleGenerateController::class,'xlsxInsert']);
